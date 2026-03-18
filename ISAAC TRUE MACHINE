@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MACHINE</title>
+</head>
+<body>
+    <center>
+    <h2> ISAACS MACHINE</h2>
+
+    <label for="trocar_base"></label>
+    <select id="trocar_base_select">
+    <option value="decimal">decimal</option>
+    <option value="binario">binario</option>
+    <option value="octal">octal</option>
+    <option value="hexadecimal">Hexadecimal</option>
+</select>
+    <p>Digite um número decimal:</p>
+    <input id="ipt_numero" type="text" placeholder="Ex: 25">
+
+    <br>
+
+    <button onclick="converter()">Converter</button>
+
+    <hr>
+
+    <h3>Resultados</h3>
+
+    <p>Binário:</p>
+    <div id="_binario" class="resultado"></div>
+
+    <p>Octal:</p>
+    <div id="_octal" class="resultado"></div>
+
+    <p>Hexadecimal:</p>
+    <div id="_hexadecimal" class="resultado"></div>
+
+
+
+    <hr>
+</center>
+</body>
+</html>
+<script>
+function converter(){
+let numero = Number(ipt_numero.value);
+let num_convertido_binario = numero.toString(2)
+var num_convertido_octal = numero.toString(8)
+var num_convertido_hexadecimal = numero.toString(16)
+let html = "";
+
+
+
+_binario.innerHTML = `seu numero em binario é ${num_convertido_binario}`
+_octal.innerHTML= `seu numero em octal é ${num_convertido_octal} `
+_hexadecimal.innerHTML = `seu numero em hexadecimal é ${num_convertido_hexadecimal}`
+}
+
+
+</script>
